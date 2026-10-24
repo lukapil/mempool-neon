@@ -1,7 +1,0 @@
-services:
-  mempool-neon:
-    build: .
-    container_name: mempool-neon
-    restart: unless-stopped
-    ports:
-      - "8097:80"
