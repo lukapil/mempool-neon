@@ -1,0 +1,18 @@
+services:
+  mempool-neon:
+    build: .
+    container_name: mempool-neon
+    restart: unless-stopped
+    ports:
+      - "8097:80"
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
